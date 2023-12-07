@@ -26,7 +26,7 @@ productsHTML+=`
       </div>
 
       <div class="product-quantity-container">
-        <select>
+        <select class="js-quntity-selector-${product.id}>
           <option selected value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -56,6 +56,7 @@ productsHTML+=`
  `;
  
 });
+
 
 document.querySelector('.js-products-grid').innerHTML=productsHTML;
 
