@@ -63,7 +63,7 @@ productsHTML+=`
 
       <div class="product-spacer"></div>
 
-      <div class="added-to-cart">
+      <div class="added-to-cart js-added-to-cart">
         <img src="images/icons/checkmark.png">
         Added
       </div>
@@ -77,7 +77,7 @@ productsHTML+=`
  `;
  
 });
-
+const addedMessageTimeouts = {};
 
 document.querySelector('.js-products-grid').innerHTML=productsHTML;
 
@@ -94,6 +94,23 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
       }
 
     })
+    const addedMessage =document.querySelector('.js-added-to-cart')
+
+    addedMessage.classList.add('added-to-cart-visible');
+   setTimeout(()=>{
+      const previousTimeOutID = addedMessageTimeouts[productId];
+      if(previousTimeOutID){
+        clearTimeout(previousTimeOutID)
+      }
+      const timeoutId = setTimeout(()=>{
+        addedMessage.classList.remove('added-to-cart-visible')
+      },2000);
+      addedMessageTimeouts[productId] = timeoutId;
+
+    })
+   
+  
+
     const quantitySelector =document.querySelector(`.js-quantity-selector-${productId}`)
     const quantity = Number(quantitySelector.value)
 
