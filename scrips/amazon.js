@@ -1,3 +1,24 @@
+const products = [{
+  id: "id1",
+  image: "images/products/backpack.jpg",
+  name: "backpack",
+  rating: {
+    stars: 4.5,
+    count: 50
+  },
+  priceCents: 10,
+},
+{
+  id:"id2",
+  image:"images/products/umbrella.jpg",
+  name: "umbrella",
+  rating: {
+    stars:5,
+    count:10
+  },
+  priceCents:20
+}
+]
 
 let productsHTML = '';
 products.forEach((product)=>{
