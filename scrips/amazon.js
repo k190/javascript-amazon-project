@@ -61,7 +61,7 @@ productsHTML+=`
 });
 
 function updateCartQuntity(){
- calculateCartQuantity();
+ const cartQuantity = calculateCartQuantity();
   
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 
