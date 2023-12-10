@@ -1,6 +1,6 @@
 export let cart = JSON.parse(localStorage.getItem('cart'));
 
-  export function calculateCartQuantity{
+  export function calculateCartQuantity(){
     let cartQuantity = 0;
   
     
